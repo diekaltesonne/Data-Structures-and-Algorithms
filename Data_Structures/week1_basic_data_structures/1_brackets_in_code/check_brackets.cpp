@@ -21,7 +21,7 @@ struct Bracket {
     char type;
     int position;
 };
-
+E
 int main() {
     std::string text;
     getline(std::cin, text);

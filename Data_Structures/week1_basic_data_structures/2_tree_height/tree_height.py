@@ -4,7 +4,19 @@ import sys
 import threading
 
 
+def allocate((n, parents):
+    for vertex in range(n):
+        tree = {vertex,[]}
+    for vertex in range(n):
+        tree = {vertex,[]}
+    
+
 def compute_height(n, parents):
+    max_height = 0
+    if a:
+        return max_height 
+    return max(compute_height(n, parents),compute_height(n, parents))
+
     # Replace this code with a faster implementation
     max_height = 0
     for vertex in range(n):
