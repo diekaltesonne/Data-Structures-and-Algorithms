@@ -11,7 +11,7 @@ class StackWithMax():
     def Pop(self):
         assert(len(self.__stack))
         self.__stack.pop()
-
+ 
     def Max(self):
         assert(len(self.__stack))
         return max(self.__stack)
