@@ -1,4 +1,22 @@
 # python3
+class PhoneBook:
+    phone_book = {}
+    
+    def __init__(self) -> None:
+        pass
+
+    def add(self, name, number):
+        self.phone_book[number] = name
+
+    def delete(self, number):
+        if self.phone_book.get(number):
+            self.phone_book.pop(number)
+    
+    def find(self,number):
+        if self.phone_book.get(number):
+            return self.phone_book[number]
+        else:
+            return 'not found'
 
 class Query:
     def __init__(self, query):
@@ -17,29 +35,16 @@ def write_responses(result):
 def process_queries(queries):
     result = []
     # Keep list of all existing (i.e. not deleted yet) contacts.
-    contacts = []
+    phone_book = PhoneBook()
     for cur_query in queries:
         if cur_query.type == 'add':
             # if we already have contact with such number,
             # we should rewrite contact's name
-            for contact in contacts:
-                if contact.number == cur_query.number:
-                    contact.name = cur_query.name
-                    break
-            else: # otherwise, just add it
-                contacts.append(cur_query)
+            phone_book.add(cur_query.name, cur_query.number)
         elif cur_query.type == 'del':
-            for j in range(len(contacts)):
-                if contacts[j].number == cur_query.number:
-                    contacts.pop(j)
-                    break
+            phone_book.delete(cur_query.number)
         else:
-            response = 'not found'
-            for contact in contacts:
-                if contact.number == cur_query.number:
-                    response = contact.name
-                    break
-            result.append(response)
+            result.append(phone_book.find(cur_query.number))
     return result
 
 if __name__ == '__main__':

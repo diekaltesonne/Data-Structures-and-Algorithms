@@ -1,5 +1,3 @@
-#https://www.coursera.org/learn/data-structures/discussions/weeks/1/threads/lwor4nEnEemZEAp2MmJyTg
-
 import os 
 from subprocess import Popen, PIPE, STDOUT
 
@@ -13,8 +11,8 @@ def test():
         if file.endswith('.py') and not file.startswith('tests_check'):
             print('\nCHECKING TEST CASES FOR FILE:  ', file)
             break
-    
-    path = '/home/ilya/Data-Structures-and-Algorithms-Specialization/Data_Structures/week1_basic_data_structures/3_network_simulation/tests' 
+    """Сюда надо копировать полный путь до файла"""
+    path = '/home/ilya/Data-Structures-and-Algorithms-Specialization/Data_Structures/week2_priority_queues_and_disjoint_sets/1_make_heap/tests' 
     for filename in sorted(os.listdir(path)): 
         f = open(path+'/' + filename, 'r') 
         content = f.read() 

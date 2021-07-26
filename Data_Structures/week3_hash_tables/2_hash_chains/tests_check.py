@@ -14,7 +14,7 @@ def test():
             print('\nCHECKING TEST CASES FOR FILE:  ', file)
             break
     
-    path = '/home/ilya/Data-Structures-and-Algorithms-Specialization/Data_Structures/week1_basic_data_structures/3_network_simulation/tests' 
+    path = '/home/ilya/Data-Structures-and-Algorithms-Specialization/Data_Structures/week3_hash_tables/2_hash_chains/tests' 
     for filename in sorted(os.listdir(path)): 
         f = open(path+'/' + filename, 'r') 
         content = f.read() 
@@ -25,7 +25,7 @@ def test():
         else:
             if stdout_data.decode().strip() == content.strip():
                 if display == '1':
-                    print('----PASSED----')
+                    print('-    ---PASSED----')
                     print('Input:  {}'.format(test_input.strip()))
                     print('Output:  {}\n'.format(content.strip()))
                 pass 
