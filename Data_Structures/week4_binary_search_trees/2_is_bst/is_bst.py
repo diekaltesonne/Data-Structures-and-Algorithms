@@ -1,4 +1,4 @@
-
+# [A program to check if a binary tree is BST or not](https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/)
 import sys, threading
 sys.setrecursionlimit(10**8) # max depth of recursion
 threading.stack_size(2**27)  # new thread will get stack of such size
