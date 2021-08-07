@@ -1,13 +1,19 @@
 #!/usr/bin/python3
-
 import sys, threading
-
 sys.setrecursionlimit(10**7) # max depth of recursion
 threading.stack_size(2**25)  # new thread will get stack of such size
 
 def IsBinarySearchTree(tree):
-  # Implement correct algorithm here
-  return True
+  ans = False
+  if len(tree) == 0:
+    return True
+  for i in tree:
+    if ((i[1] < i[0]) or (i[1] == -1)) and ((i[0] <= i[2]) or (i[2] == -1)):
+      ans = True
+    else:
+      ans = False
+      break
+  return ans
 
 
 def main():

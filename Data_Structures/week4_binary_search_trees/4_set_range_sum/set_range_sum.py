@@ -1,10 +1,8 @@
-# python3
-
+# Splay tree implementation
+# Vertex of a splay tree
+# [Splay-дерево](https://neerc.ifmo.ru/wiki/index.php?title=Splay-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE)
 from sys import stdin
 
-# Splay tree implementation
-
-# Vertex of a splay tree
 class Vertex:
   def __init__(self, key, sum, left, right, parent):
     (self.key, self.sum, self.left, self.right, self.parent) = (key, sum, left, right, parent)
@@ -54,9 +52,9 @@ def bigRotation(v):
     smallRotation(v)
     smallRotation(v)
 
-# Makes splay of the given vertex and makes
-# it the new root.
 def splay(v):
+  # Makes splay of the given vertex and makes
+  # it the new root.
   if v == None:
     return None
   while v.parent != None:
@@ -66,15 +64,15 @@ def splay(v):
     bigRotation(v)
   return v
 
-# Searches for the given key in the tree with the given root
-# and calls splay for the deepest visited node after that.
-# Returns pair of the result and the new root.
-# If found, result is a pointer to the node with the given key.
-# Otherwise, result is a pointer to the node with the smallest
-# bigger key (next value in the order).
-# If the key is bigger than all keys in the tree,
-# then result is None.
-def find(root, key): 
+def find(root, key):
+  # Searches for the given key in the tree with the given root
+  # and calls splay for the deepest visited node after that.
+  # Returns pair of the result and the new root.
+  # If found, result is a pointer to the node with the given key.
+  # Otherwise, result is a pointer to the node with the smallest
+  # bigger key (next value in the order).
+  # If the key is bigger than all keys in the tree,
+  # then result is None. 
   v = root
   last = root
   next = None
@@ -103,8 +101,7 @@ def split(root, key):
   update(left)
   update(right)
   return (left, right)
-
-  
+   
 def merge(left, right):
   if left == None:
     return right
@@ -118,8 +115,7 @@ def merge(left, right):
   return right
 
   
-# Code that uses splay tree to solve the problem
-                                    
+# Code that uses splay tree to solve the problem                             
 root = None
 
 def insert(x):
@@ -130,15 +126,19 @@ def insert(x):
     new_vertex = Vertex(x, x, None, None, None)  
   root = merge(merge(left, new_vertex), right)
   
-def erase(x): 
-  global root
+def erase(x):
   # Implement erase yourself
-  pass
+  global root
+  ans,root = find(root,x)
+  v2 = splay(root) 
+  root = merge(v2.left, v2.right)
 
 def search(x): 
-  global root
   # Implement find yourself
-  
+  global root
+  ans,root = find(root,x)
+  if ans:
+    return ans
   return False
   
 def sum(fr, to): 
@@ -149,6 +149,25 @@ def sum(fr, to):
   # Complete the implementation of sum
 
   return ans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 MODULO = 1000000001
 n = int(stdin.readline())
