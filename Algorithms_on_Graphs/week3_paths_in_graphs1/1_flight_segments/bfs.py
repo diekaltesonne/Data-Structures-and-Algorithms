@@ -4,11 +4,29 @@ import sys
 import queue
 
 def bfs(adj, s, t):
-    pass
+    d = [0] * len(adj)
+    #d[s] = 0
+    Q = queue.Queue()
+    Q.put(s)
+    while Q.empty() == False:
+        if d[t] != 0:
+            #print("test")
+            return d[t] 
+        u = Q.get()
+        for j in adj[u]:
+            if d[j] == 0:
+                Q.put(j)
+                d[j] = d[u] + 1
+                    
+    return d[t]
+
 
 def distance(adj, s, t):
-    #write your code here
-    return -1
+    ans = bfs(adj,s,t)
+    if ans == 0:
+        return -1
+    else:
+        return ans
 
 if __name__ == '__main__':
     input = sys.stdin.read()
