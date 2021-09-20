@@ -1,32 +1,26 @@
 #Uses python3
-
-from re import match
 import sys
-from typing import Match
-import math
 
 def dijkstra(adj, cost):
-    prev = [-1] * len(adj)
-    d = [100009] * len(adj)
-    for v in range(len(adj)):
-        x = -1
-        for v1 in range(len(adj[v])):
-            if d[adj[v][v1]] > d[v] + cost[v][v1]:
-                d[adj[v][v1]] = d[v] + cost[v][v1]
-                prev[adj[v][v1]] = d[v]
-                x = adj[v][v1]
-    
-    x = -1
-    for v in range(len(adj)):
-        x = -1
-        for v1 in range(len(adj[v])):
-            if d[adj[v][v1]] > d[v] + cost[v][v1]:
-                x = adj[v][v1]
-                break
-        if x != -1:
-            break    
-
-    if x == -1:
+    # initiate all distances and previouses to be -1.
+    dist = [-1] * len(adj)
+    #just start from first vertex
+    dist[0] = 0
+    #first run Bellamford V - 1 cycles.  
+    #if no negative cycles then this should be the last iteration of changes
+    for i in range(len(adj)):
+        for j  in range(len(adj)):
+            for index, store in enumerate(adj[j]):
+                jstoreCost = cost[j][index]
+                if dist[store] > dist[j] + jstoreCost:
+                    dist[store] = dist[j] + jstoreCost
+        #check at V - 1 and then V to see if they change
+        if i == len(adj) - 2:
+            dist_Vminus1 = list(dist)
+        if i == len(adj) - 1:
+            dist_V = list(dist)
+    #if there are changes on the Vth cycle,  then there was a negative cycle
+    if dist_Vminus1 == dist_V:
         return 0
     else:
         return 1
@@ -34,7 +28,6 @@ def dijkstra(adj, cost):
 def negative_cycle(adj, cost):
     #write your code here
     return dijkstra(adj,cost)
-
 
 if __name__ == '__main__':
     input = sys.stdin.read()

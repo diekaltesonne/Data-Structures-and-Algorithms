@@ -73,7 +73,8 @@ Prim(G)
     v ← ExtractMin(PrioQ)
     for all {v, z} ∈ E:
       if z ∈ PrioQ and cost[z] > w(v, z):
-        cost[z] ← w(v, z), parent[z] ← v
+        cost[z] ← w(v, z)
+        parent[z] ← v
         ChangePriority(PrioQ, z, cost[z])
 ```
 
@@ -85,3 +86,7 @@ Prim(G)
 ## 6. Summary
 **Kruskal**: repeatedly add the next lightest edge if this doesn’t produce a cycle; use disjoint sets to check whether the current edge joins two vertices from different components</br>
 **Prim**: repeatedly attach a new vertex to the current tree by a lightest edge; use priority queue to quickly find the next lightest edge</br>
+### Resourse:
+* [Минимальное остовное дерево. Алгоритм Крускала](https://e-maxx.ru/algo/mst_kruskal)
+* [Минимальное остовное дерево. Алгоритм Прима](https://e-maxx.ru/algo/mst_prim)
+* [АиСД S03E05. Минимальное остовное дерево](https://www.youtube.com/watch?v=aKSyWOwl9cQ)
