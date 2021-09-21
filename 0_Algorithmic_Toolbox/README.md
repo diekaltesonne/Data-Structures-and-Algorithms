@@ -1,16 +1,11 @@
 # Coursera: Algorithmic Toolbox
-
 This portion of the repository contains all solutions for the course [Algorithmic Toolbox](https://www.coursera.org/learn/algorithmic-toolbox) offered on Coursera. The assignment solutions are in Python3.
-
 **Disclaimer:** The below solutions are **for reference only**. Please design and implement your own algorithms to pass the course.
-
 ### Week 1- Programming Challenges ([PDF](/week1_programming_challenges/week1_programming_challenges.pdf))
 
 - [Sum of Two Digits](/week1_programming_challenges/1_sum_of_two_digits/APlusB.cpp)
 - [Maximum Pairwise Product](/week1_programming_challenges/2_maximum_pairwise_product/max_pairwise_product_full.cpp)
-
 ### Week 2- Algorithmic Warm-up ([PDF](/week2_algorithmic_warmup/week2_algorithmic_warmup.pdf))
-
 - [Fibonacci Number](/week2_algorithmic_warmup/1_fibonacci_number/fibonacci.cpp)
 - [Last Digit of a Large Fibonacci Number](/week2_algorithmic_warmup/2_last_digit_of_fibonacci_number/fibonacci_last_digit.cpp)
 - [Greatest Common Divisor](/week2_algorithmic_warmup/3_greatest_common_divisor/gcd.cpp)
@@ -18,8 +13,6 @@ This portion of the repository contains all solutions for the course [Algorithmi
 - [Fibonacci Number Again](/week2_algorithmic_warmup/5_fibonacci_number_again/fibonacci_huge.cpp)
 - [Last Digit of the Sum of Fibonacci Numbers](/week2_algorithmic_warmup/6_last_digit_of_the_sum_of_fibonacci_numbers/fibonacci_sum_last_digit.cpp)
 - [Last Digit of the Sum of Fibonacci Numbers Again](/week2_algorithmic_warmup/7_last_digit_of_the_sum_of_fibonacci_numbers_again/fibonacci_partial_sum.cpp)
-
-
 ### Week 3- Greedy Algorithms ([PDF](/Assignments/week3_greedy_algorithms.pdf))
 
 - [Money Change](/week3_greedy_algorithms/1_money_change/change.cpp)
