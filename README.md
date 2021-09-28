@@ -26,7 +26,7 @@
 - [] [Organizing a Lottery](/week4_divide_and_conquer/5_organizing_a_lottery/points_and_segments.cpp)
 - [] [Closest Points](/week4_divide_and_conquer/6_closest_points/closest.cpp)
 ### Week 5- Dynamic Programming 1 ([PDF](/Assignments/week5_dynamic_programming1.pdf))
-- [] [Money Change Again](/week5_dynamic_programming1/1_money_change_again)
+- [X] [Money Change Again](/week5_dynamic_programming1/1_money_change_again)
 - [] [Primitive Calculator](/week5_dynamic_programming1/2_primitive_calculator)
 - [] [Edit Distance](/week5_dynamic_programming1/3_edit_distance)
 - [] [Longest Common Subsequence of Two Sequence](/week5_dynamic_programming1/4_longest_common_subsequence_of_two_sequences)
