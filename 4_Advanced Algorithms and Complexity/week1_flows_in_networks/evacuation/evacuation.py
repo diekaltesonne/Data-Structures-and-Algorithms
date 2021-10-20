@@ -49,7 +49,7 @@ class FlowGraph:
         self.edges[id ^ 1].flow -= flow
 
 def max_flow(graph:FlowGraph, from_:int, to:int) -> int:
-    graph.
+    
     
     flow = 0    
     # your code goes here
