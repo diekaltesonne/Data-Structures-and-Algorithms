@@ -14,7 +14,7 @@ def test():
             print('\nCHECKING TEST CASES FOR FILE:  ', file)
             break
     
-    path = '/home/ilya/Data-Structures-and-Algorithms-Specialization/4_Advanced Algorithms and Complexity/week1_flows_in_networks/evacuation/tests' 
+    path = '/home/ilya/Repos/repos/Data-Structures-and-Algorithms-Specialization/4_Advanced Algorithms and Complexity/week1_flows_in_networks/evacuation/tests' 
     for filename in sorted(os.listdir(path)): 
         f = open(path+'/' + filename, 'r') 
         content = f.read() 

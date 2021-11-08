@@ -1,7 +1,6 @@
 # python3
-
+import queue
 class Edge:
-
     def __init__(self, u, v, capacity):
         self.u = u
         self.v = v
@@ -48,11 +47,21 @@ class FlowGraph:
         self.edges[id].flow += flow
         self.edges[id ^ 1].flow -= flow
 
+def dijkstra_search(graph:FlowGraph, from_:int, to:int):
+    dist = [float('inf')] * graph.size
+    dist[from_] = 0
+    H = queue.PriorityQueue()
+    H.put(from_)
+    while not H.empty():
+        u = H.get()
+        for v, w in enumerate(graph.get_edge(u)):
+            if dist[v] > dist[u] + graph.get_edge(u).capacity:
+                dist[v] = dist[u] + graph.get_edge(u).capacity
+                H.put(v)
+    return dist[to]
+
 def max_flow(graph:FlowGraph, from_:int, to:int) -> int:
-    
-    
-    flow = 0    
-    # your code goes here
+    flow = 0
     return flow
 
 
